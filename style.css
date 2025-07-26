@@ -213,10 +213,10 @@ h1 {
     color: white;
     width: 100%;
     text-align: center;
-    border: 1px solid var(--border-color);
+    border: none;
     padding: 0.75rem;
     font-size: 1.125rem;
-    background: var(--background);
+    background: var(--container-bg);
     transition: 0.2s;
     border-radius: 10px;
 
@@ -224,7 +224,6 @@ h1 {
 
 #length-box:focus {
     outline: none;
-    border-color: var(--primary-color);
 }
 
 #length-box[type="number"]::-webkit-inner-spin-button {
@@ -324,7 +323,6 @@ h1 {
 
 #exclude:focus {
     outline: none;
-    border-color: var(--primary-color);
 }
 
 .status {
