@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/style.css">
+    <link rel="shortcut icon" href="/icon.png" type="image/x-icon">
+    <title>PassPlex - Secure Password Generator</title>
+</head>
+
+<body>
+    <header>
+        <h1>Create strong and secure passwords to keep your account safe online.</h1>
+    </header>
+    <main class="main">
+        <section class="container">
+            <div class="output">
+                <input id="password" type="text" autocomplete="off" spellcheck="false">
+                <button class="copy-btn" type="button" onclick="copyPassword()" title="Copy password to clipboard">
+                    <span class="copy-text">Copy</span>
+                    <span class="copy-success" style="display: none;">Copied!</span>
+                </button>
+            </div>
+            <button class="generate-password" type="button" onclick="generatePassword()">
+                Generate Password
+            </button>
+            <div class="controls">
+                <div class="slider-row">
+                    <div class="pass-len-div">
+                        <span>Password Length : </span>
+                        <span id="length-val">12</span>
+                    </div>
+                    <div class="slider-div">
+                        <button class="slider-btn" id="slider-minus" title="Decrease length" type="button">-</button>
+                        <input type="range" min="4" max="128" value="12" id="length-slider">
+                        <button class="slider-btn" id="slider-plus" title="Increase length" type="button">+</button>
+                    </div>
+                    <input type="number" id="length-box" min="4" max="128" value="12">
+                </div>
+                <div class="checkboxes">
+                    <label>
+                        <span>ABC</span>
+                        <span class="toggle-switch">
+                            <input type="checkbox" id="upper" checked>
+                            <span class="switch-slider" role="switch" aria-hidden="true"></span>
+                        </span>
+                    </label>
+                    <label>
+                        <span>abc</span>
+                        <span class="toggle-switch">
+                            <input type="checkbox" id="lower" checked>
+                            <span class="switch-slider" role="switch" aria-hidden="true"></span>
+                        </span>
+                    </label>
+                    <label>
+                        <span>123</span>
+                        <span class="toggle-switch">
+                            <input type="checkbox" id="numbers" checked>
+                            <span class="switch-slider" role="switch" aria-hidden="true"></span>
+                        </span>
+                    </label>
+                    <label>
+                        <span>&%$</span>
+                        <span class="toggle-switch">
+                            <input type="checkbox" id="symbols" checked>
+                            <span class="switch-slider" role="switch" aria-hidden="true"></span>
+                        </span>
+                    </label>
+                </div>
+                <div class="exclude-div">
+                    <label for="exclude" class="exclude-txt">Exclude these characters :</label>
+                    <input type="text" id="exclude" placeholder="e.g. ABCabc123&%$">
+                </div>
+            </div>
+            <div class="status">
+                <div class="indicator">
+                    <span>Strength : </span>
+                    <span id="strength"></span>
+                </div>
+                <div class="estimate">
+                    <span>Time to crack : </span>
+                    <span id="crack-time"></span>
+                </div>
+            </div>
+        </section>
+    </main>
+    <script src="/script.js"></script>
+</body>
+
+</html>
